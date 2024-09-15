@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { base_url, period_month } from '../utils/constants'
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const [planets, setPlanets] = useState<string[]>(['wait...']);
 
   useEffect(() => {

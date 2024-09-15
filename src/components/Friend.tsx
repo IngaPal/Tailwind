@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface FriendProps {
     picture: string;
     pos: number;
@@ -8,8 +6,8 @@ interface FriendProps {
     isHidden: boolean;
 }
 
-const Friend: React.FC<FriendProps> = ({ picture, pos, onClick, isSelected, isHidden }) => {
-    let containerStyles = 'relative aspect-square';
+const Friend = ({ picture, pos, onClick, isSelected, isHidden }: FriendProps) => {
+    let containerStyles = 'relative w-full h-full';
     let imageStyles = 'w-full h-full object-cover transition-all duration-300 ease-in-out';
     
     if (pos === 7) imageStyles += ' rounded-bl-3xl';

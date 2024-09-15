@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { friends } from '../utils/constants'
 import Friend from './Friend'
 
-const DreamTeam: React.FC = () => {
+const DreamTeam = () => {
     const [selectedFriend, setSelectedFriend] = useState<number | null>(null);
 
     const handleFriendClick = (index: number) => {
@@ -10,9 +10,9 @@ const DreamTeam: React.FC = () => {
     };
 
     return (
-        <section className="float-right w-1/2 border border-base-color rounded-b-3xl mx-2 relative" style={{ height: '50vw' }}>
+        <section className="float-right w-1/2 border border-base-color rounded-b-3xl mx-2 relative">
             <h2 className="text-center">Dream Team</h2>
-            <div className="absolute inset-0 p-2">
+            <div className="relative" style={{ paddingBottom: '75%' }}> {/* Changed to 75% for 4:3 aspect ratio */}
                 {selectedFriend !== null ? (
                     <Friend
                         picture={friends[selectedFriend]}
@@ -22,7 +22,7 @@ const DreamTeam: React.FC = () => {
                         isHidden={false}
                     />
                 ) : (
-                    <div className="grid grid-cols-3 gap-1 h-full">
+                    <div className="absolute inset-0 grid grid-cols-3 gap-1">
                         {friends.map((friend, index) => (
                             <Friend
                                 key={index}

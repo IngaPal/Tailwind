@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { base_url, period_month } from '../utils/constants'
 
 interface Hero {
@@ -12,7 +12,7 @@ interface Hero {
   eye_color: string;
 }
 
-const AboutMe: React.FC = () => {
+const AboutMe = () => {
   const [hero, setHero] = useState<Hero | null>(null);
   useEffect(() => {
     const storedHero = localStorage.getItem('hero');
